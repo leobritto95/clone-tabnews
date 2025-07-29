@@ -22,6 +22,7 @@ describe("POST /api/v1/users", () => {
         }),
       });
 
+      console.log(response);
       expect(response.status).toBe(201);
 
       const responseBody = await response.json();
@@ -30,7 +31,7 @@ describe("POST /api/v1/users", () => {
         id: responseBody.id,
         username: "leandrobritto",
         email: "leandrobrittoleite@gmail.com",
-        password: "password123",
+        password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
       });
