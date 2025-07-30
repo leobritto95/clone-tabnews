@@ -1,9 +1,9 @@
-const {
-  MethodNotAllowedError,
+import {
   InternalServerError,
+  MethodNotAllowedError,
   ValidationError,
   NotFoundError,
-} = require("./errors");
+} from "infra/errors";
 
 function onNoMatchHandler(request, response) {
   const publicErrorObject = new MethodNotAllowedError();
